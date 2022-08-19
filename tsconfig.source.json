@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": []
+  },
+  "include": ["src", "*.js", "*.ts"],
+  "exclude": ["src/**/__tests__", "src/utils/tests", "jest.setupAfterEnv.ts"]
+}
