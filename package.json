@@ -11,7 +11,7 @@
     "static"
   ],
   "scripts": {
-    "build": "rimraf dist && tsc --project tsconfig.build.json && chmod +x dist/index.js",
+    "build": "rimraf dist && node esbuild.js && chmod +x dist/index.js",
     "checks": "yarn typecheck && yarn lint && yarn prettier:check && yarn test --coverage",
     "lint": "eslint .",
     "prettier:check": "prettier --check .",
@@ -34,6 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
     "chalk": "^4.1.2",
+    "esbuild": "^0.15.5",
     "eslint": "^8.22.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
