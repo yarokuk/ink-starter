@@ -6,6 +6,10 @@
   "engines": {
     "node": ">=14"
   },
+  "files": [
+    "dist/index.js",
+    "static"
+  ],
   "scripts": {
     "build": "rimraf dist && tsc --project tsconfig.build.json && chmod +x dist/index.js",
     "checks": "yarn typecheck && yarn lint && yarn prettier:check && yarn test --coverage",
@@ -18,9 +22,6 @@
     "typecheck:tests": "tsc --project ./tsconfig.spec.json",
     "typecheck": "yarn typecheck:source && yarn typecheck:tests"
   },
-  "files": [
-    "dist/index.js"
-  ],
   "dependencies": {
     "ink": "^3.2.0",
     "react": "^17.0.2"
