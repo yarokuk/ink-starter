@@ -1,8 +1,10 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    "incremental": true,
     "lib": ["es2020"],
     "noEmit": true,
+    "tsBuildInfoFile": "./.tscache/.spec.tsbuildinfo",
     "types": ["jest"]
   },
   "include": ["src/**/__tests__"]
