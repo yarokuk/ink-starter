@@ -16,20 +16,6 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier"
   ],
-  "overrides": [
-    {
-      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
-      "extends": ["plugin:jest/recommended"],
-      "rules": {
-        "jest/prefer-lowercase-title": [
-          "error",
-          {
-            "ignore": ["describe"]
-          }
-        ]
-      }
-    }
-  ],
   "parserOptions": {
     "ecmaVersion": 2020,
     "ecmaFeatures": {
@@ -73,15 +59,28 @@
       }
     ],
     "import/extensions": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["*.js", "*.ts", "src/**/__tests__/**/*"] }
+    ],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "no-console": "off",
     "no-empty": ["error", { "allowEmptyCatch": true }],
     "no-plusplus": "off",
+    "no-process-exit": "off",
     "no-ternary": "off",
     "no-underscore-dangle": "error",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
+    "node/shebang": [
+      "error",
+      {
+        "convertPath": {
+          "src/index.tsx": ["^src/index.tsx$", "dist/index.js"]
+        }
+      }
+    ],
     "react/function-component-definition": [
       "error",
       {
@@ -93,6 +92,26 @@
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off"
   },
+  "overrides": [
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    },
+    {
+      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": {
+        "jest/prefer-lowercase-title": [
+          "error",
+          {
+            "ignore": ["describe"]
+          }
+        ]
+      }
+    }
+  ],
   "settings": {
     "react": {
       "version": "detect"

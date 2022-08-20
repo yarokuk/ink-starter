@@ -1,6 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-process-exit */
-/* eslint-disable @typescript-eslint/no-var-requires */
 require('esbuild')
   .build({
     entryPoints: ['src/index.tsx'],

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { Config } from '@jest/types'
 import { pathsToModuleNameMapper } from 'ts-jest'
