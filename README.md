@@ -33,3 +33,7 @@ This starter comes with several npm scripts, here are the main ones:
 - `start`: Start the production app that was built with the `build` script.
 - `test`: Run tests with [Jest](https://jestjs.io/).
 - `typecheck`: Typecheck your source code and tests with [TypeScript](https://www.typescriptlang.org/).
+
+## `ink-starter` License
+
+[MIT](https://github.com/yarokuk/ink-starter/blob/main/ink-starter-license)
