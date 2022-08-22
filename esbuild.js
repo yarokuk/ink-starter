@@ -11,6 +11,9 @@ require('esbuild')
     charset: 'utf8',
     minify: true,
     sourcemap: true,
+    banner: {
+      js: '"use strict"; process.env.NODE_ENV = "production";',
+    },
   })
   .catch((error) => {
     console.error(error)
