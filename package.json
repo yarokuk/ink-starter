@@ -13,7 +13,11 @@
   "scripts": {
     "build": "yarn typecheck:source && rimraf dist && node esbuild.js && chmod +x dist/index.js",
     "checks": "yarn typecheck && yarn lint && yarn prettier:check && yarn test --coverage",
-    "dev": "ts-node-dev --transpile-only --quiet --clear --exit-child --project tsconfig.build.json -r tsconfig-paths/register src/index.tsx",
+    "dev:base": "ts-node-dev --transpile-only --quiet --exit-child --project tsconfig.build.json -r tsconfig-paths/register",
+    "dev:clear": "yarn dev:base --clear src/index.tsx",
+    "dev:clear:hang": "yarn dev:base --clear --respawn src/index.tsx",
+    "dev:hang": "yarn dev:base --respawn src/index.tsx",
+    "dev": "yarn dev:base src/index.tsx",
     "lint": "eslint .",
     "prettier:check": "prettier --check .",
     "prettier": "prettier --write --list-different .",
