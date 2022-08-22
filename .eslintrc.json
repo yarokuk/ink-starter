@@ -58,6 +58,7 @@
         "leadingUnderscore": "allowDouble"
       }
     ],
+    "@typescript-eslint/no-confusing-void-expression": "error",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": [
       "error",
@@ -71,6 +72,7 @@
     "no-process-exit": "off",
     "no-ternary": "off",
     "no-underscore-dangle": "error",
+    "no-void": "off",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
     "node/shebang": [
@@ -81,6 +83,20 @@
         }
       }
     ],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "if" },
+      { "blankLine": "always", "prev": "if", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": "*", "next": "multiline-const" },
+      { "blankLine": "always", "prev": "*", "next": "multiline-expression" },
+      { "blankLine": "always", "prev": "*", "next": "multiline-let" },
+      { "blankLine": "always", "prev": "multiline-const", "next": "*" },
+      { "blankLine": "always", "prev": "multiline-expression", "next": "*" },
+      { "blankLine": "always", "prev": "multiline-let", "next": "*" },
+      { "blankLine": "always", "prev": "const", "next": "expression" },
+      { "blankLine": "always", "prev": "let", "next": "expression" }
+    ],
     "react/function-component-definition": [
       "error",
       {
@@ -88,8 +104,13 @@
         "unnamedComponents": "arrow-function"
       }
     ],
+    "react/hook-use-state": "error",
+    "react/jsx-curly-brace-presence": "error",
+    "react/jsx-boolean-value": "error",
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
     "react/jsx-uses-react": "off",
+    "react/no-unused-prop-types": "error",
+    "react/self-closing-comp": "error",
     "react/react-in-jsx-scope": "off"
   },
   "overrides": [
